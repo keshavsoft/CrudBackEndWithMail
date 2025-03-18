@@ -13,7 +13,7 @@ git pull
 
 call npm run Students
 
-xcopy .\publicDir\Students ..\CrudBackEndWithMail\public /h /i /c /k /e /r /y
+xcopy .\publicDir\Students ..\CrudBackEndWithMail\public\Students /h /i /c /k /e /r /y
 
 
 
