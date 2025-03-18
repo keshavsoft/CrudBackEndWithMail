@@ -54,7 +54,9 @@ let PostImageAndMailFunc = async (inPostBody) => {
         return PostFuncDalsForMongoDB(inPostBody);
     }
 
-    return PostImageAndMailFuncDal(inPostBody);
+    const LocalFromDal = await PostImageAndMailFuncDal(inPostBody);
+
+    return await LocalFromDal;
 };
 
 export {

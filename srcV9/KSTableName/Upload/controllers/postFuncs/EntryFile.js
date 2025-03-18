@@ -47,12 +47,14 @@ let PostImageAndMailFunc = async (req, res) => {
     let protocol = req.protocol;
     let LocalDomainName = `${protocol}://${host}`;
 
-    PostImageAndMailFuncRepo({
+    const LocalFromRepo = await PostImageAndMailFuncRepo({
         inDomainName: LocalDomainName,
         inDataToInsert: LocalBody,
         inpk: req.KeshavSoft.insertedPk,
         inImageName: req.KeshavSoft.Uuid
     });
+    
+    console.log("from Upload Controller : ", LocalFromRepo.response);
 
     res.status(200).send(`${req.KeshavSoft.insertedPk}`);
 };

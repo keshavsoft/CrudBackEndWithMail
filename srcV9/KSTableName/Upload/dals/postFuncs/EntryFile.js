@@ -39,10 +39,12 @@ let PostImageAndMailFunc = async ({ inDomainName, inDataToInsert, inpk, inImageN
 
     fs.renameSync(`${ConfigJson.JsonPath}/${LocalTableFolder}/${inImageName}`, `${ConfigJson.JsonPath}/${LocalTableFolder}/${LocalFromSave.pk}${LocalExtension}`);
 
-    return await SendMail({
+    const LocalFromSendMail = await SendMail({
         inDomainName,
         inDataToInsert, inpk: LocalFromSave.pk
     });
+
+    return await LocalFromSendMail;
 };
 
 export {
