@@ -4,6 +4,6 @@ git pull
 
 call gulp build:publicDir
 
-xcopy .\publicDir ..\CrudGenV5\public\Students /h /i /c /k /e /r /y
+xcopy .\publicDir ..\CrudBackEndWithMail\public\Students /h /i /c /k /e /r /y
 
-cd ..\CrudGenV5
+cd ..\CrudBackEndWithMail
