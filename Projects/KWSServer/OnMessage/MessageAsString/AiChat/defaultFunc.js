@@ -14,6 +14,10 @@ const StartFunc = ({ inDataAsString, inSendFunc }) => {
             inSendFunc({ inMessage: "Pong" });
 
             break;
+        case "I am a Student":
+            inSendFunc({ inMessage: "Good to hear that, your good Name?" });
+
+            break;
         default:
             break;
     };

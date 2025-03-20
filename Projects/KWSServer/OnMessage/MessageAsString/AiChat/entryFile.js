@@ -7,7 +7,6 @@ const StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) =
         return element.id === LocalSendObject.id && element.InOut === "Out";
     });
 
-    console.log("ahhhh : ", LocalLastFind);
     if (LocalLastFind === undefined) {
         StartFuncDefaultFunc({ inDataAsString, inSendFunc });
     } else {
