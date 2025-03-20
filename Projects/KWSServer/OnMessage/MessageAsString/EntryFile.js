@@ -27,6 +27,10 @@ let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => 
         myPhone({ inSendFunc });
     };
 
+    if (LocalDataAsSting === "ping") {
+        inws.send("pong");
+    };
+
     LocalFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
 };
 
