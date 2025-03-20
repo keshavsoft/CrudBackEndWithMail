@@ -15,12 +15,12 @@ let StartFunc = (server) => {
 
 let WsOnConnection = (ws, req) => {
     let LocalIpAddress = req.headers["x-forwarded-for"];
-  
+
     if ("cookie" in req.headers) {
         let LocalCookieValue = req.headers["cookie"].split(";");
         console.log("LocalCookieValue : ", LocalCookieValue);
     };
-    
+
     CommoninsertToClients({
         inClients: clients,
         ws,
@@ -45,6 +45,10 @@ let WsOnConnection = (ws, req) => {
     //     inMessage: { Type: 'IsStudent', webSocketId: localWebSocketData.id },
     //     inTypeJson: true
     // });
+
+    LocalFuncSendMessage({
+        inMessage: "Are you a Student?"
+    });
 
     ws.on('message', (data, isBinary) => {
         CommonChatLog.push({ id: localWebSocketData.id, data, InOut: "In" });
