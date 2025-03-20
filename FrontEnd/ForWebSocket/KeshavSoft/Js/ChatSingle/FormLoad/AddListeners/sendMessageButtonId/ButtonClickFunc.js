@@ -10,7 +10,7 @@ let StartFunc = async (e) => {
     };
 
     jVarLocalChatMessagesContainerId.innerHTML += `<div class="message mb-3 align-self-start">
-            <div class="bg-light rounded p-2 messageClass">
+            <div class="bg-primary text-white rounded p-2">
                 <strong>${UserName}:</strong> ${message}
             </div>
             <small class="text-muted timeClass">3 mins ago</small>
