@@ -3,6 +3,7 @@ import { StartFunc as StartFuncGetWebSocketId } from "./getWebSocketId.js";
 import { StartFunc as StartFuncreturnOnlineClientsWOMe } from "./returnOnlineClientsWOMe.js";
 import { StartFunc as myChat } from "./myChat.js";
 import { StartFunc as myPhone } from "./myPhone.js";
+import { StartFunc as StartFuncAiChat } from "./AiChat/entryFile.js";
 
 let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => {
     let LocalDataAsSting = inDataAsString;
@@ -27,11 +28,12 @@ let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => 
         myPhone({ inSendFunc });
     };
 
-    if (LocalDataAsSting === "ping") {
-        inws.send("pong");
-    };
+    // if (LocalDataAsSting === "ping") {
+    //     inws.send("pong");
+    // };
 
-    LocalFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
+    // LocalFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
+    StartFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
 };
 
 const LocalFuncAiChat = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => {
@@ -40,38 +42,44 @@ const LocalFuncAiChat = ({ inDataAsString, inws, inClients, inChatLog, inSendFun
     let LocalLastFind = inChatLog.findLast(element => {
         return element.id === LocalSendObject.id && element.InOut === "Out";
     });
-    // console.log("ahhhh : ", LocalLastFind);
 
-    switch (LocalLastFind.data.Type) {
-        case "IsStudent":
-            switch (inDataAsString) {
-                case "Yes":
-                    inSendFunc({ inMessage: "YourName" });
+    console.log("ahhhh : ", LocalLastFind);
+    if (LocalLastFind === undefined) {
+        inSendFunc({ inMessage: "IsStudent" });
 
-                    break;
-                default:
-                    switch (inDataAsString) {
-                        case "Hai":
-                        case "hai":
-                            console.log("aaaaaaaaaaaaaaaaa");
+    } else {
+        switch (LocalLastFind.data.Type) {
+            case "IsStudent":
+                switch (inDataAsString) {
+                    case "Yes":
+                        inSendFunc({ inMessage: "YourName" });
 
-                            inSendFunc({ inMessage: "Hello" });
+                        break;
+                    default:
+                        switch (inDataAsString) {
+                            case "Hai":
+                            case "hai":
+                                console.log("aaaaaaaaaaaaaaaaa");
 
-                            break;
-                        default:
-                            break;
-                    }; break;
-            }; break;
-        default:
-            switch (inDataAsString) {
-                case "Hai":
-                case "hai":
-                    inSendFunc({ inMessage: "Hello" });
+                                inSendFunc({ inMessage: "Hello" });
 
-                    break;
-                default:
-                    break;
-            }; break;
+                                break;
+                            default:
+                                break;
+                        }; break;
+                }; break;
+            default:
+                switch (inDataAsString) {
+                    case "Hai":
+                    case "hai":
+                        inSendFunc({ inMessage: "Hello" });
+
+                        break;
+                    default:
+                        break;
+                }; break;
+        };
+
     };
 };
 

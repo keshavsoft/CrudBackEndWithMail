@@ -41,16 +41,9 @@ let WsOnConnection = (ws, req) => {
         };
     };
 
-    LocalFuncSendMessage({
-        inMessage: { Type: 'IsStudent', webSocketId: localWebSocketData.id },
-        inTypeJson: true
-    });
-    // ws.send(JSON.stringify({ Type: 'GetWebSocketId', webSocketId: localWebSocketData.id }));
-    // CommonSaveToJsonOnConnections({
-    //     inVerifyToken: LocalFromVerifyToken,
-    //     inws: ws,
-    //     inClients: clients,
-    //     inRequest: req
+    // LocalFuncSendMessage({
+    //     inMessage: { Type: 'IsStudent', webSocketId: localWebSocketData.id },
+    //     inTypeJson: true
     // });
 
     ws.on('message', (data, isBinary) => {
