@@ -6,5 +6,10 @@
     "Search",
     "Upload",
     "Alter",
-    "Images"
+    "Images",
+    "AggrFuncs",
+    "SelectedColumns",
+    "GroupByColumn",
+    "ShowGet",
+    "BulkPost"
 ]
