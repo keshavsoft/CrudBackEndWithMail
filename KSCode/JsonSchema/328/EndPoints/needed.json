@@ -11,5 +11,7 @@
     "SelectedColumns",
     "GroupByColumn",
     "ShowGet",
-    "BulkPost"
+    "BulkPost",
+    "Upload",
+    "UploadImageAsBase64"
 ]
