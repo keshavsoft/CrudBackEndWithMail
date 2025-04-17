@@ -13,5 +13,6 @@
     "ShowGet",
     "BulkPost",
     "Upload",
-    "UploadImageAsBase64"
+    "UploadImageAsBase64",
+    "RowShow"
 ]
