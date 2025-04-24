@@ -1,7 +1,7 @@
-import { StartFunc as ReadFromFile } from '../../kLowDb/deleteFile.js';
+import { StartFunc as ReadFromdeleteFile } from '../../kLowDb/deleteFile.js';
 
 let GetFunc = ({ inFileName }) => {
-    let LocalFromLowDb = ReadFromFile({ inFileName });
+    let LocalFromLowDb = ReadFromdeleteFile({ inFileName });
 
     return LocalFromLowDb;
 };
