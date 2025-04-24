@@ -11,7 +11,7 @@ import { StartFunc as StartFuncPortListen } from "./PortListen.js";
 
 import { StartFunc as MiddleWaresBinSecured } from "./MiddleWares/MiddleWares.binSecured/EntryFile.js";
 import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
-import { router as routerFromCreateFile } from "./CreateFile/routes.js";
+import { router as routerFromJsonFile } from "./JsonFile/routes.js";
 
 import express from 'express';
 import http from 'http';
@@ -57,7 +57,7 @@ app.use('/utility', routerForUtility);
 app.use('/Common', routerFromCommon);
 app.use('/Login', routerFromLogin);
 
-app.use('/CreateFile', routerFromCreateFile);
+app.use('/JsonFile', routerFromJsonFile);
 
 app.use('/Cors', CommonCorsFunc, Cors);
 
