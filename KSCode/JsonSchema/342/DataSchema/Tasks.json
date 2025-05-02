@@ -1,0 +1,11 @@
+  {
+    "Title": {
+      "type": "STRING"
+    },
+    "Start": {
+      "type": "STRING"
+    },
+    "ClassName": {
+      "type": "STRING"
+    }
+  }

@@ -1,0 +1,18 @@
+[
+    "Create",
+    "Show",
+    "Bulk",
+    "ShowWithColumns",
+    "Search",
+    "UploadImage",
+    "Alter",
+    "Images",
+    "AggrFuncs",
+    "SelectedColumns",
+    "GroupByColumn",
+    "ShowGet",
+    "BulkPost",
+    "Upload",
+    "UploadImageAsBase64",
+    "RowShow"
+]
